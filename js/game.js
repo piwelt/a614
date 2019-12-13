@@ -5,16 +5,16 @@ let hits = 0;
 let firstHitTime = 0;
 
 function round() {
-  $('.target').removeClass('target'); ❶
-  $('.miss').removeClass('miss'); ❶
+  $('.target').removeClass('target');
+  $('.miss').removeClass('miss');
 
   let divSelector = randomDivId();
   $(divSelector).addClass('target')
   $(divSelector).text(hits + 1)
   // console.log(divSelector);
 
-  if (hits === 1) { firstHitTime = getTimestamp(); } ❷
-  if (hits === maxHits) { endGame(); } ❷
+  if (hits === 1) { firstHitTime = getTimestamp(); }
+  if (hits === maxHits) { endGame(); }
 }
 
 function endGame() {
@@ -33,7 +33,7 @@ function handleClick(event) {
     hits = hits + 1;
     target.text('');
     round();
-  } else { $(event.target).addClass('miss'); } ❷
+  } else { $(event.target).addClass('miss'); }
 }
 
 function init() {
